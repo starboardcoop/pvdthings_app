@@ -22,15 +22,19 @@ class ThingCard extends StatelessWidget {
                     fontSize: 18,
                   ),
                 ),
+                const SizedBox(height: 6),
                 Container(
                   child: Text(
                     thing.location ?? "Wanted",
                     style: const TextStyle(
-                      backgroundColor: Colors.black,
                       color: Colors.white,
                     ),
                   ),
-                  padding: const EdgeInsets.fromLTRB(0, 4, 0, 4),
+                  padding: const EdgeInsets.fromLTRB(8, 2, 8, 2),
+                  decoration: const BoxDecoration(
+                    color: Colors.black,
+                    borderRadius: BorderRadius.all(Radius.circular(45)),
+                  ),
                 ),
               ],
             ),
