@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:pvd_things_app/models/thing.dart';
+import 'package:pvd_things_app/color_generator.dart';
 
 class ThingCard extends StatelessWidget {
   final Thing thing;
 
-  const ThingCard({required this.thing});
+  const ThingCard({Key? key, required this.thing}) : super(key: key);
+
+  String get _tag => thing.location ?? "Wanted";
+
+  Color _tagColor(String tag) {
+    if (tag == "Wanted") return Colors.black;
+    return ColorGenerator.generate(tag);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,23 +33,21 @@ class ThingCard extends StatelessWidget {
                 const SizedBox(height: 6),
                 Container(
                   child: Text(
-                    thing.location ?? "Wanted",
+                    _tag,
                     style: const TextStyle(
                       color: Colors.white,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                   padding: const EdgeInsets.fromLTRB(8, 2, 8, 2),
-                  decoration: const BoxDecoration(
-                    color: Colors.black,
-                    borderRadius: BorderRadius.all(Radius.circular(45)),
+                  decoration: BoxDecoration(
+                    color: _tagColor(_tag),
+                    borderRadius: const BorderRadius.all(Radius.circular(45)),
                   ),
                 ),
               ],
             ),
-            Image.network(
-              thing.image!,
-              height: 86,
-            ),
+            Image.network(thing.image!, height: 86),
           ],
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
         ),
