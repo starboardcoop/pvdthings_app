@@ -5,6 +5,13 @@ class PollsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: const Text("Polls")));
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Polls"),
+      ),
+      body: const Center(
+        child: Text("Coming soon..."),
+      ),
+    );
   }
 }
