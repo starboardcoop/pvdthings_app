@@ -29,32 +29,7 @@ class _ViewControllerState extends State<ViewController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: _bottomNavigationBar(),
       body: _pages.elementAt(_selectedPage),
-    );
-  }
-
-  Widget _bottomNavigationBar() {
-    return BottomNavigationBar(
-      items: const [
-        BottomNavigationBarItem(
-          icon: Icon(Icons.handyman_outlined),
-          activeIcon: Icon(Icons.handyman),
-          label: "Things",
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.how_to_vote_outlined),
-          activeIcon: Icon(Icons.how_to_vote),
-          label: "Polls",
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.account_circle_outlined),
-          activeIcon: Icon(Icons.account_circle),
-          label: "Me",
-        )
-      ],
-      currentIndex: _selectedPage,
-      onTap: _updatePage,
     );
   }
 }
