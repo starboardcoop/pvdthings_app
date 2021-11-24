@@ -33,7 +33,9 @@ class ThingCard extends StatelessWidget {
                 const SizedBox(height: 6),
                 Container(
                   child: Text(
-                    _tag,
+                    thing.stock! > 0
+                        ? "${thing.stock} @ ${thing.location}"
+                        : _tag,
                     style: const TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.w500,

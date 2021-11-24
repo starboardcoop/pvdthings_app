@@ -76,9 +76,7 @@ class _BrowsePageState extends State<BrowsePage> {
           ? const Center(child: CircularProgressIndicator())
           : ListView.builder(
               itemCount: _things.length,
-              itemBuilder: (context, index) {
-                return ThingCard(thing: _things[index]);
-              },
+              itemBuilder: (context, index) => ThingCard(thing: _things[index]),
             ),
     );
   }
