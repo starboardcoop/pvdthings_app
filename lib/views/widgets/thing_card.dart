@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pvd_things_app/models/thing.dart';
-import 'package:pvd_things_app/color_generator.dart';
+import 'package:pvd_things_app/helpers/color_generator.dart';
 
 class ThingCard extends StatelessWidget {
   final Thing thing;
